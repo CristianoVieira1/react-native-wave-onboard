@@ -1,10 +1,10 @@
-import Color from "color";
-import React from "react";
-import { Dimensions, StyleSheet } from "react-native";
-import Svg, { Defs, RadialGradient, Rect, Stop } from "react-native-svg";
-import * as S from "./styles";
+import Color from 'color';
+import React from 'react';
+import { Dimensions, StyleSheet } from 'react-native';
+import Svg, { Defs, RadialGradient, Rect, Stop } from 'react-native-svg';
+import * as S from './styles';
 
-const { width, height } = Dimensions.get("screen");
+const { width, height } = Dimensions.get('screen');
 
 export interface SlideProps {
   slide: {

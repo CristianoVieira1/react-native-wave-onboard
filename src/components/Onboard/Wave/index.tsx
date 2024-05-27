@@ -1,6 +1,6 @@
 import MaskedView from '@react-native-community/masked-view';
-import React, {ReactElement} from 'react';
-import {Dimensions, Platform, StyleSheet, View} from 'react-native';
+import React, { type ReactElement } from 'react';
+import { Dimensions, Platform, StyleSheet, View } from 'react-native';
 import Animated, {
   Extrapolate,
   interpolate,
@@ -10,12 +10,12 @@ import Animated, {
   withSpring,
   withTiming,
 } from 'react-native-reanimated';
-import {Vector} from 'react-native-redash';
-import Svg, {Path} from 'react-native-svg';
+import type { Vector } from 'react-native-redash';
+import Svg, { Path } from 'react-native-svg';
 
-import {SlideProps} from '../Slider/Slide';
+import type { SlideProps } from '../Slider/Slide';
 
-export const {width: WIDTH, height: HEIGHT} = Dimensions.get('screen');
+export const { width: WIDTH, height: HEIGHT } = Dimensions.get('screen');
 export const MIN_LEDGE = 25;
 export const MARGIN_WIDTH = MIN_LEDGE + 50;
 
@@ -23,7 +23,7 @@ const AnimatedPath = Animated.createAnimatedComponent(Path);
 
 const vec2 = (x: number, y: number) => {
   'worklet';
-  return {x, y};
+  return { x, y };
 };
 const curve = (c1: Vector, c2: Vector, to: Vector) => {
   'worklet';
@@ -45,7 +45,7 @@ interface WaveProps {
 
 const Wave = ({
   side,
-  position: {x, y},
+  position: { x, y },
   children,
   isTransitioning,
 }: WaveProps) => {
@@ -57,7 +57,7 @@ const Wave = ({
       x.value,
       [0, MIN_LEDGE],
       [0, MIN_LEDGE],
-      Extrapolate.CLAMP,
+      Extrapolate.CLAMP
     );
     const baseLedge = minLedge + Math.max(0, x.value - MIN_LEDGE - R.value);
     return withSpring(isTransitioning.value ? x.value : baseLedge);
@@ -68,7 +68,7 @@ const Wave = ({
     const stepX = R.value / 2; // R/2
     const C = stepY * 0.5522847498;
 
-    const p1 = {x: ledge.value, y: y.value - 2 * stepY};
+    const p1 = { x: ledge.value, y: y.value - 2 * stepY };
     const p2 = vec2(p1.x + stepX, p1.y + stepY);
     const p3 = vec2(p2.x + stepX, p2.y + stepY);
     const p4 = vec2(p3.x - stepX, p3.y + stepY);
@@ -105,9 +105,10 @@ const Wave = ({
       style={[
         StyleSheet.absoluteFill,
         {
-          transform: [{rotateY: side === Side.RIGHT ? '180deg' : '0deg'}],
+          transform: [{ rotateY: side === Side.RIGHT ? '180deg' : '0deg' }],
         },
-      ]}>
+      ]}
+    >
       <AnimatedPath
         fill={Platform.OS === 'android' ? children.props.slide.color : 'black'}
         animatedProps={animatedProps}
@@ -118,13 +119,11 @@ const Wave = ({
     return {
       transform: [
         {
-          translateX:
-            // eslint-disable-next-line no-nested-ternary
-            isTransitioning.value
-              ? withTiming(0)
-              : side === Side.RIGHT
-              ? WIDTH - ledge.value
-              : -WIDTH + ledge.value,
+          translateX: isTransitioning.value
+            ? withTiming(0)
+            : side === Side.RIGHT
+            ? WIDTH - ledge.value
+            : -WIDTH + ledge.value,
         },
       ],
     };
@@ -139,11 +138,7 @@ const Wave = ({
       </View>
     );
   }
-  return (
-    <MaskedView style={StyleSheet.absoluteFill} maskElement={maskElement}>
-      {children}
-    </MaskedView>
-  );
+  return <MaskedView>{children}</MaskedView>;
 };
 
 export default Wave;

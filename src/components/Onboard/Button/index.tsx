@@ -5,7 +5,7 @@ import Animated, {
   useAnimatedStyle,
   withTiming,
 } from 'react-native-reanimated';
-import { Vector } from 'react-native-redash';
+import type { Vector } from 'react-native-redash';
 
 import { Side } from '../Wave';
 
