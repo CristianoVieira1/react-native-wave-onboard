@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import * as Animatable from 'react-native-animatable';
 import Slider from './Slider';
 import Slide from './Slider/Slide';
@@ -26,13 +26,8 @@ const Onboard: React.FC<OnboardProps> = ({ slides = [], onStartPress, language =
   const nextSlider = slides[index + 1];
 
   function handleSkip() {
-    console.log("Skip button clicked");
     setIndex(slides.length - 1);
   };
-
-  useEffect(() => {
-    console.log("Index updated to:", index);
-  }, [index]);
 
   return (
     <>
