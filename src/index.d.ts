@@ -1,10 +1,10 @@
 import React from 'react';
 
-export interface SlideProps {
+interface SlideProps {
   color: string;
   title: string;
   description: string;
-  picture: any;
+  picture: ReturnType<typeof require>;
 }
 
 export interface OnboardProps {

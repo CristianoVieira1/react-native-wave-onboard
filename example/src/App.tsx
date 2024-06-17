@@ -1,16 +1,9 @@
 import * as React from 'react';
 
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { Onboard } from 'react-native-wave-onboarding';
+import { Onboard, type SlideProps } from 'react-native-wave-onboarding';
 
-interface OnboardItem {
-  color: string;
-  title: string;
-  description: string;
-  picture: any;
-}
-
-const onboardItems: OnboardItem[] = [
+const onboardItems: SlideProps[] = [
   {
     color: '#FF5733',
     title: 'Welcome',

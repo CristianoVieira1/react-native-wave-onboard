@@ -6,20 +6,24 @@ import { styles } from './styles';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { getTranslation } from '../../utils/translation';
 
-interface SlideProps {
+export interface SlideProps {
   color: string;
   title: string;
   description: string;
-  picture: any;
+  picture: ReturnType<typeof require>;
 }
 
 interface OnboardProps {
   slides?: SlideProps[];
   onStartPress?: () => void;
-  language?: 'ptBR' | 'en' | 'es'
+  language?: 'ptBR' | 'en' | 'es';
 }
 
-const Onboard: React.FC<OnboardProps> = ({ slides = [], onStartPress, language = 'ptBR' }) => {
+const Onboard: React.FC<OnboardProps> = ({
+  slides = [],
+  onStartPress,
+  language = 'ptBR',
+}) => {
   const [index, setIndex] = useState(0);
 
   const prevSlider = slides[index - 1];
@@ -27,7 +31,7 @@ const Onboard: React.FC<OnboardProps> = ({ slides = [], onStartPress, language =
 
   function handleSkip() {
     setIndex(slides.length - 1);
-  };
+  }
 
   return (
     <>
@@ -53,8 +57,13 @@ const Onboard: React.FC<OnboardProps> = ({ slides = [], onStartPress, language =
                     useNativeDriver
                     iterationCount={'infinite'}
                   >
-                    <TouchableOpacity onPress={onStartPress} style={styles.button}>
-                      <Text style={styles.buttonText}>{getTranslation(language, 'start')}</Text>
+                    <TouchableOpacity
+                      onPress={onStartPress}
+                      style={styles.button}
+                    >
+                      <Text style={styles.buttonText}>
+                        {getTranslation(language, 'start')}
+                      </Text>
                     </TouchableOpacity>
                   </Animatable.View>
                 </View>
@@ -66,7 +75,9 @@ const Onboard: React.FC<OnboardProps> = ({ slides = [], onStartPress, language =
 
       {index < slides.length - 1 && (
         <TouchableOpacity onPress={handleSkip} style={styles.buttonSkip}>
-          <Text style={styles.buttonSkipText}>{getTranslation(language, 'skip')}</Text>
+          <Text style={styles.buttonSkipText}>
+            {getTranslation(language, 'skip')}
+          </Text>
         </TouchableOpacity>
       )}
     </>
