@@ -11,7 +11,6 @@
   "dependencies": {
     "@expo/vector-icons": "^14.0.2",
     "@react-native-community/masked-view": "^0.1.11",
-    "color": "^4.2.3",
     "expo": "~51.0.14",
     "expo-status-bar": "~1.12.1",
     "react": "18.2.0",
