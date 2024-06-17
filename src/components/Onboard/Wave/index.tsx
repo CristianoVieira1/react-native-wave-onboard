@@ -50,41 +50,42 @@ const Wave = ({
   isTransitioning,
 }: WaveProps) => {
   const R = useDerivedValue(() => {
-    return Math.min(x.value - MIN_LEDGE, WIDTH / 2);
-  });
+    return Math.min(x.value - MIN_LEDGE, WIDTH / 2)
+  })
+
   const ledge = useDerivedValue(() => {
     const minLedge = interpolate(
       x.value,
       [0, MIN_LEDGE],
       [0, MIN_LEDGE],
-      Extrapolate.CLAMP
-    );
-    const baseLedge = minLedge + Math.max(0, x.value - MIN_LEDGE - R.value);
-    return withSpring(isTransitioning.value ? x.value : baseLedge);
-  });
-  // variaveis para o path da animação
+      Extrapolate.CLAMP,
+    )
+    const baseLedge = minLedge + Math.max(0, x.value - MIN_LEDGE - R.value)
+    return withSpring(isTransitioning.value ? x.value : baseLedge)
+  })
+
   const animatedProps = useAnimatedProps(() => {
-    const stepY = x.value - MIN_LEDGE; // R = 50
-    const stepX = R.value / 2; // R/2
-    const C = stepY * 0.5522847498;
+    const stepY = x.value - MIN_LEDGE // R = 50
+    const stepX = R.value / 2 // R/2
+    const C = stepY * 0.5522847498
 
-    const p1 = { x: ledge.value, y: y.value - 2 * stepY };
-    const p2 = vec2(p1.x + stepX, p1.y + stepY);
-    const p3 = vec2(p2.x + stepX, p2.y + stepY);
-    const p4 = vec2(p3.x - stepX, p3.y + stepY);
-    const p5 = vec2(p4.x - stepX, p4.y + stepY);
+    const p1 = { x: ledge.value, y: y.value - 2 * stepY }
+    const p2 = vec2(p1.x + stepX, p1.y + stepY)
+    const p3 = vec2(p2.x + stepX, p2.y + stepY)
+    const p4 = vec2(p3.x - stepX, p3.y + stepY)
+    const p5 = vec2(p4.x - stepX, p4.y + stepY)
 
-    const c11 = vec2(p1.x, p1.y + C);
-    const c12 = vec2(p2.x, p2.y);
+    const c11 = vec2(p1.x, p1.y + C)
+    const c12 = vec2(p2.x, p2.y)
 
-    const c21 = vec2(p2.x, p2.y);
-    const c22 = vec2(p3.x, p3.y - C);
+    const c21 = vec2(p2.x, p2.y)
+    const c22 = vec2(p3.x, p3.y - C)
 
-    const c31 = vec2(p3.x, p3.y + C);
-    const c32 = vec2(p4.x, p4.y);
+    const c31 = vec2(p3.x, p3.y + C)
+    const c32 = vec2(p4.x, p4.y)
 
-    const c41 = vec2(p4.x, p4.y);
-    const c42 = vec2(p5.x, p5.y - C);
+    const c41 = vec2(p4.x, p4.y)
+    const c42 = vec2(p5.x, p5.y - C)
 
     return {
       d: [
@@ -98,8 +99,9 @@ const Wave = ({
         `V ${HEIGHT}`,
         'H 0',
       ].join(' '),
-    };
-  });
+    }
+  })
+
   const maskElement = (
     <Svg
       style={[
@@ -114,20 +116,24 @@ const Wave = ({
         animatedProps={animatedProps}
       />
     </Svg>
-  );
+  )
+
   const androidStyle = useAnimatedStyle(() => {
     return {
       transform: [
         {
-          translateX: isTransitioning.value
-            ? withTiming(0)
-            : side === Side.RIGHT
-            ? WIDTH - ledge.value
-            : -WIDTH + ledge.value,
+          translateX:
+            // eslint-disable-next-line no-nested-ternary
+            isTransitioning.value
+              ? withTiming(0)
+              : side === Side.RIGHT
+                ? WIDTH - ledge.value
+                : -WIDTH + ledge.value,
         },
       ],
-    };
-  });
+    }
+  })
+
   if (Platform.OS === 'android') {
     return (
       <View style={StyleSheet.absoluteFill}>
@@ -136,9 +142,15 @@ const Wave = ({
           {children}
         </Animated.View>
       </View>
-    );
+    )
   }
-  return <MaskedView>{children}</MaskedView>;
-};
 
-export default Wave;
+  return (
+    // @ts-ignore
+    <MaskedView style={StyleSheet.absoluteFill} maskElement={maskElement}>
+      {children}
+    </MaskedView>
+  )
+}
+
+export default Wave

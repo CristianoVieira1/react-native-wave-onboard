@@ -2,7 +2,7 @@
   "compilerOptions": {
     "rootDir": ".",
     "paths": {
-      "react-native-wave-onboard": ["./src/index"]
+      "react-native-wave-onboarding": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,

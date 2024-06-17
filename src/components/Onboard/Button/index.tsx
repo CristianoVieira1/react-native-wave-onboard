@@ -31,6 +31,7 @@ const Button = ({ position, side, activeSide }: ButtonProps) => {
     alignItems: 'center',
     opacity: withTiming(activeSide.value === Side.NONE ? 1 : 0),
   }));
+
   return (
     <Animated.View style={style}>
       <Icon

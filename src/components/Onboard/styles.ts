@@ -1,23 +1,33 @@
-import styled from 'styled-components/native';
+import { StyleSheet } from 'react-native';
 
-export const Container = styled.View`
-  z-index: 10;
-`;
+const styles = StyleSheet.create({
+  container: {
+    zIndex: 10,
+  },
+  content: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    bottom: 20,
+  },
+  button: {
+    padding: 10,
+    borderRadius: 5,
+    alignItems: 'center',
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  buttonSkip: {
+    position: 'absolute',
+    bottom: 50,
+    alignSelf: 'center',
+    padding: 20
+  },
+  buttonSkipText: {
+    fontSize: 18,
+  }
+});
 
-export const Content = styled.View`
-  align-items: center;
-  justify-content: center;
-  bottom: 20px;
-`;
-
-export const Button = styled.TouchableOpacity`
-  padding: 10px;
-  border-radius: 5px;
-  align-items: center;
-`;
-
-export const ButtonText = styled.Text`
-  color: #fff;
-  font-size: 18px;
-  font-weight: bold;
-`;
+export { styles }

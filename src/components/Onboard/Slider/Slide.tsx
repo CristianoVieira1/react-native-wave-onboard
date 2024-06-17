@@ -1,8 +1,8 @@
 import Color from 'color';
 import React from 'react';
-import { Dimensions, StyleSheet } from 'react-native';
+import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
 import Svg, { Defs, RadialGradient, Rect, Stop } from 'react-native-svg';
-import * as S from './styles';
+import { styles } from './styles';
 
 const { width, height } = Dimensions.get('screen');
 
@@ -19,6 +19,7 @@ const Slide = ({
   slide: { picture, color, title, description },
 }: SlideProps) => {
   const lighterColor = Color(color).lighten(0.8).toString();
+
   return (
     <>
       <Svg style={StyleSheet.absoluteFill}>
@@ -30,14 +31,13 @@ const Slide = ({
         </Defs>
         <Rect x={0} y={0} width={width} height={height} fill="url(#gradient)" />
       </Svg>
-      <S.Container>
-        {/* <Image source={picture} style={styles.image} /> */}
-        <S.Image source={picture} />
-        <S.Content>
-          <S.Title>{title}</S.Title>
-          <S.SubTitle>{description}</S.SubTitle>
-        </S.Content>
-      </S.Container>
+      <View style={styles.container}>
+        <Image source={picture} style={styles.image} />
+        <View style={styles.content}>
+          <Text style={styles.title}>{title}</Text>
+          <Text style={styles.subTitle}>{description}</Text>
+        </View>
+      </View>
     </>
   );
 };

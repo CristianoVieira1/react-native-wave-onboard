@@ -1,17 +1,17 @@
-# react-native-wave-onboard
+# react-native-wave-onboarding
 
-Uma biblioteca para transicao de tela em onboard animado.
+teste
 
 ## Installation
 
 ```sh
-npm install react-native-wave-onboard
+npm install react-native-wave-onboarding
 ```
 
 ## Usage
 
 ```js
-import { multiply } from 'react-native-wave-onboard';
+import { multiply } from 'react-native-wave-onboarding';
 
 // ...
 

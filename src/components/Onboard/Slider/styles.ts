@@ -1,31 +1,29 @@
-import styled from 'styled-components/native';
+import { StyleSheet } from 'react-native';
 
-export const Container = styled.View`
-  padding: 75px;
-  padding-top: 150px;
-  align-items: center;
-`;
+const styles = StyleSheet.create({
+  container: {
+    padding: 75,
+    paddingTop: 150,
+    alignItems: 'center',
+  },
+  image: {
+    width: '100%',
+    height: 360,
+  },
+  content: {
+    marginTop: 24,
+  },
+  title: {
+    fontSize: 34,
+    color: '#1f2937',
+    textAlign: 'center',
+    marginBottom: 10,
+  },
+  subTitle: {
+    fontSize: 16,
+    color: '#1f2937',
+    textAlign: 'center',
+  },
+});
 
-export const Image = styled.Image`
-  width: 100%;
-  height: 360px;
-`;
-
-export const Content = styled.View`
-  margin-top: 24px;
-`;
-
-export const Title = styled.Text`
-  font-size: 34px;
-  color: #1f2937;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  text-align: center;
-  margin-bottom: 10px;
-`;
-
-export const SubTitle = styled.Text`
-  font-size: 16px;
-  color: #1f2937;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  text-align: center;
-`;
+export { styles }

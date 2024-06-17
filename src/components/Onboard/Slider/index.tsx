@@ -39,12 +39,14 @@ const Slider = ({
 }: SliderProps) => {
   const hasPrev = !!prev;
   const hasNext = !!next;
+
   const zIndex = useSharedValue(0);
   const left = useVector(0, HEIGHT / 2);
   const right = useVector(0, HEIGHT / 2);
   const activeSide = useSharedValue(Side.NONE);
   const isTransitioningLeft = useSharedValue(false);
   const isTransitioningRight = useSharedValue(false);
+
   const onGestureEvent = useAnimatedGestureHandler({
     onStart: ({ x }) => {
       if (x <= MARGIN_WIDTH && hasPrev) {
@@ -125,6 +127,7 @@ const Slider = ({
       <PanGestureHandler onGestureEvent={onGestureEvent}>
         <Animated.View style={StyleSheet.absoluteFill}>
           {current}
+
           {prev && (
             <Animated.View style={[StyleSheet.absoluteFill, leftStyle]}>
               <Wave
@@ -141,6 +144,7 @@ const Slider = ({
               />
             </Animated.View>
           )}
+
           {next && (
             <Animated.View style={StyleSheet.absoluteFill}>
               <Wave

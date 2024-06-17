@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import * as Animatable from 'react-native-animatable';
 import Slider from './Slider';
 import Slide from './Slider/Slide';
-import * as S from './styles';
+import { styles } from './styles';
+import { View, Text, TouchableOpacity } from 'react-native';
+import { getTranslation } from '../../utils/translation';
 
 interface SlideProps {
   color: string;
@@ -14,13 +16,23 @@ interface SlideProps {
 interface OnboardProps {
   slides?: SlideProps[];
   onStartPress?: () => void;
+  language?: 'ptBR' | 'en' | 'es'
 }
 
-const Onboard: React.FC<OnboardProps> = ({ slides = [], onStartPress }) => {
+const Onboard: React.FC<OnboardProps> = ({ slides = [], onStartPress, language = 'ptBR' }) => {
   const [index, setIndex] = useState(0);
+
   const prevSlider = slides[index - 1];
   const nextSlider = slides[index + 1];
-  const currentSlide = slides[index];
+
+  function handleSkip() {
+    console.log("Skip button clicked");
+    setIndex(slides.length - 1);
+  };
+
+  useEffect(() => {
+    console.log("Index updated to:", index);
+  }, [index]);
 
   return (
     <>
@@ -28,34 +40,40 @@ const Onboard: React.FC<OnboardProps> = ({ slides = [], onStartPress }) => {
         key={index}
         index={index}
         setIndex={setIndex}
-        prev={prevSlider}
-        next={nextSlider}
+        prev={prevSlider && <Slide slide={prevSlider} />}
+        next={nextSlider && <Slide slide={nextSlider} />}
       >
         <>
-          <Slide slide={currentSlide!} />
+          <Slide slide={slides[index]!} />
           {index === slides.length - 1 && (
-            <S.Container>
+            <View style={styles.container}>
               <Animatable.View
                 animation={'bounceInUp'}
                 useNativeDriver
                 duration={3000}
               >
-                <S.Content>
+                <View style={styles.content}>
                   <Animatable.View
                     animation={'pulse'}
                     useNativeDriver
                     iterationCount={'infinite'}
                   >
-                    <S.Button onPress={onStartPress}>
-                      <S.ButtonText>Iniciar</S.ButtonText>
-                    </S.Button>
+                    <TouchableOpacity onPress={onStartPress} style={styles.button}>
+                      <Text style={styles.buttonText}>{getTranslation(language, 'start')}</Text>
+                    </TouchableOpacity>
                   </Animatable.View>
-                </S.Content>
+                </View>
               </Animatable.View>
-            </S.Container>
+            </View>
           )}
         </>
       </Slider>
+
+      {index < slides.length - 1 && (
+        <TouchableOpacity onPress={handleSkip} style={styles.buttonSkip}>
+          <Text style={styles.buttonSkipText}>{getTranslation(language, 'skip')}</Text>
+        </TouchableOpacity>
+      )}
     </>
   );
 };
