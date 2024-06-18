@@ -26,11 +26,11 @@
     "!**/.*"
   ],
   "scripts": {
-    "example": "yarn workspace react-native-wave-onboarding-example",
+    "example": "yarn --cwd example",
     "test": "jest",
     "typecheck": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
-    "clean": "del-cli lib",
+    "clean": "del-cli android/build example/android/build example/android/app/build example/ios/build lib",
     "prepare": "bob build",
     "release": "release-it"
   },
@@ -96,10 +96,6 @@
     "react-native-redash": "^18.1.3",
     "react-native-svg": "^15.3.0"
   },
-  "workspaces": [
-    "example"
-  ],
-  "packageManager": "yarn@3.6.1",
   "jest": {
     "preset": "react-native",
     "modulePathIgnorePatterns": [
@@ -173,7 +169,5 @@
       ]
     ]
   },
-  "dependencies": {
-    "styled-components": "^6.1.11"
-  }
+  "private": "true"
 }
