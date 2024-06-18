@@ -17,6 +17,38 @@ const translations: Translations = {
     start: "Comenzar",
     skip: "Omitir",
   },
+  fr: {
+    start: "Commencer",
+    skip: "Passer",
+  },
+  de: {
+    start: "Starten",
+    skip: "Überspringen",
+  },
+  it: {
+    start: "Iniziare",
+    skip: "Salta",
+  },
+  ru: {
+    start: "Начать",
+    skip: "Пропустить",
+  },
+  ja: {
+    start: "開始",
+    skip: "スキップ",
+  },
+  ko: {
+    start: "시작",
+    skip: "건너뛰기",
+  },
+  zhCN: {
+    start: "开始",
+    skip: "跳过",
+  },
+  ar: {
+    start: "ابدأ",
+    skip: "تخطى",
+  },
 };
 
 export const getTranslation = (language: keyof Translations, key: string): string => {

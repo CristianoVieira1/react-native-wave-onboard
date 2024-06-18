@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
+import { Text, TouchableOpacity, View } from 'react-native';
 import * as Animatable from 'react-native-animatable';
+import { getTranslation } from '../../utils/translation';
 import Slider from './Slider';
 import Slide from './Slider/Slide';
 import { styles } from './styles';
-import { View, Text, TouchableOpacity } from 'react-native';
-import { getTranslation } from '../../utils/translation';
 
 export interface SlideProps {
   color: string;
@@ -16,7 +16,7 @@ export interface SlideProps {
 interface OnboardProps {
   slides?: SlideProps[];
   onStartPress?: () => void;
-  language?: 'ptBR' | 'en' | 'es';
+  language?: 'ptBR' | 'en' | 'es' | 'fr' | 'de' | 'it' | 'ru' | 'ja' | 'ko' | 'zhCN' | 'ar';
 }
 
 const Onboard: React.FC<OnboardProps> = ({
