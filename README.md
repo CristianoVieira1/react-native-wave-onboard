@@ -44,5 +44,3 @@ If you have a **question**, found a **bug** or want to propose a new **feature**
 MIT
 
 ---
-
-Made with [create-react-native-library](https://github.com/callstack/react-native-builder-bob)
