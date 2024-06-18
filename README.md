@@ -19,8 +19,8 @@ import { Onboard } from 'react-native-wave-onboard';
   slides={[
     {
       color: '#FF5733',
-      title: 'Onboarding',
-      description: 'Done with React Native Onboarding Swiper',
+      title: 'Welcome',
+      description: 'Get started with our app',
       picture: <Image source={require('./images/circle.png')} />,
     },
     ...
