@@ -1,4 +1,3 @@
-```markdown
 # `<Onboard />`
 
 [![npm](https://img.shields.io/npm/v/react-native-wave-onboard.svg)](https://www.npmjs.com/package/react-native-wave-onboard)
@@ -55,7 +54,7 @@ const App = () => {
           },
           // Add more slides as needed
         ]}
-        language="en"
+        language="Enter the desired language" // 'ptBR' | 'en' | 'es' | 'fr' | 'de' | 'it' | 'ru' | 'ja' | 'ko' | 'zhCN' | 'ar'
         onStartPress={() => {
           // TODO: Implement your function to redirect
         }}
@@ -90,5 +89,4 @@ Este projeto está licenciado sob a licença MIT - consulte o arquivo [LICENSE](
 Feito com 💜 por Cristiano Borges 👋 [linkedin](https://www.linkedin.com/in/cristianobv/)
 
 Conheça meu Portfólio 🚀 [portfolio](https://cristianovieira1.github.io/portfolio/)
-```
 
