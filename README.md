@@ -2,25 +2,42 @@
 
 teste
 
-## Installation
+## Install
 
-```sh
-npm install react-native-wave-onboarding
+```bash
+npm i react-native-wave-onboard
+```
+
+```bash
+yarn add react-native-wave-onboard
 ```
 
 ## Usage
 
 ```js
-import { multiply } from 'react-native-wave-onboarding';
+import { Onboard } from 'react-native-wave-onboard';
 
-// ...
-
-const result = await multiply(3, 7);
+<Onboard
+  slides={[
+    {
+      color: '#FF5733',
+      title: 'Onboarding',
+      description: 'Done with React Native Onboarding Swiper',
+      picture: <Image source={require('./images/circle.png')} />,
+    },
+    ...
+  ]}
+  onStartPress={() => {
+    // TODO: Implement your function to redirect
+  }}
+/>
 ```
 
 ## Contributing
 
-See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
+If you have a **question**, found a **bug** or want to propose a new **feature**, have a look at the [issues page](https://github.com/CristianoVieira1/react-native-wave-onboard/issues).
+
+**Pull requests** are especially welcomed when they fix bugs or improve the code quality.
 
 ## License
 
