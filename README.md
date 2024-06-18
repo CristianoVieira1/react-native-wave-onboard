@@ -1,6 +1,4 @@
-# react-native-wave-onboarding
-
-teste
+# `<Onboard />` [![npm](https://img.shields.io/npm/v/react-native-wave-onboard.svg)](https://www.npmjs.com/package/react-native-wave-onboard)
 
 ## Install
 
