@@ -82,11 +82,11 @@ If you have a **question**, found a **bug** or want to propose a new **feature**
 
 ## 📝 License
 
-Este projeto está licenciado sob a licença MIT - consulte o arquivo [LICENSE](LICENSE) para obter detalhes.
+This project is licensed under the MIT License - see file [LICENSE](LICENSE) for details.
 
 ---
 
 Feito com 💜 por Cristiano Borges 👋 [linkedin](https://www.linkedin.com/in/cristianobv/)
+Feito com 💜 por Daniel Marques 👋 [linkedin](https://www.linkedin.com/in/danmarquesdev/)
 
-Conheça meu Portfólio 🚀 [portfolio](https://cristianovieira1.github.io/portfolio/)
 
