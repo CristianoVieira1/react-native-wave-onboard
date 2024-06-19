@@ -86,7 +86,8 @@ This project is licensed under the MIT License - see file [LICENSE](LICENSE) for
 
 ---
 
-Feito com 💜 por Cristiano Borges 👋 [linkedin](https://www.linkedin.com/in/cristianobv/) e 
-Daniel Marques 👋 [linkedin](https://www.linkedin.com/in/danmarquesdev/)
+Feito com 💜 por Cristiano Borges 👋 [linkedin](https://www.linkedin.com/in/cristianobv/) ,
+Daniel Marques 👋 [linkedin](https://www.linkedin.com/in/danmarquesdev/) ,
+Gabriel Rocha  👋 [linkedin](https://www.linkedin.com/in/gabriel-rocha-508b62b1/) ,
 
 
