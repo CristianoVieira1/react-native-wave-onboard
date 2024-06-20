@@ -1,5 +1,5 @@
 {
-  "name": "react-native-wave-onboarding",
+  "name": "react-native-wave-onboard",
   "version": "0.1.0",
   "description": "teste",
   "main": "lib/commonjs/index",
@@ -41,14 +41,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CristianoVieira1/react-native-wave-onboarding.git"
+    "url": "git+https://github.com/CristianoVieira1/react-native-wave-onboard"
   },
   "author": "CristianoVieira1 <cristianovieirati@gmail.com> (https://github.com/CristianoVieira1)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/CristianoVieira1/react-native-wave-onboarding/issues"
+    "url": "https://github.com/CristianoVieira1/react-native-wave-onboard/issues"
   },
-  "homepage": "https://github.com/CristianoVieira1/react-native-wave-onboarding#readme",
+  "homepage": "https://github.com/CristianoVieira1/react-native-wave-onboard#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
