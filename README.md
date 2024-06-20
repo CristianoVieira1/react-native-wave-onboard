@@ -3,7 +3,7 @@
 [![npm](https://img.shields.io/npm/v/react-native-wave-onboard.svg)](https://www.npmjs.com/package/react-native-wave-onboard)
 
 <h1 align="center">
-  <img alt="Logo" src="./src/assets/screen.png" width="180px">
+  <img alt="Logo" src="https://github.com/CristianoVieira1/react-native-wave-onboard/blob/master/src/assets/screen.png" width="180px">
 </h1>
 
 ## Install
