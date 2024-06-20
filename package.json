@@ -1,7 +1,17 @@
 {
   "name": "react-native-wave-onboard",
   "version": "0.1.0",
-  "description": "teste",
+  "description": "An engaging and animated onboarding component for React Native.",
+  "contributors": [
+    {
+      "name": "Daniel Marques",
+      "email": "daniel.silva.city@gmail.com"
+    },
+    {
+      "name": "Gabriel Rocha",
+      "email": "sousa-gabriel@hotmail.com"
+    }
+  ],
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/src/index.d.ts",
